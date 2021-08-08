@@ -3,9 +3,12 @@ function bigram($str)
 {
   $exp = explode(" ", $str);
   $chunk = array_chunk($exp, 2);
+  $myString = "";
   foreach ($chunk as $value) {
-    print_r("{$value[0]} {$value[1]}, ");
+    $myString .= "{$value[0]} {$value[1]}, ";
   }
+  $trimmed = rtrim($myString, ", ");
+  echo $trimmed;
 }
 
 $text = "Jakarta adalah ibukota negara Republik Indonesia";

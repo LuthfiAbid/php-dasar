@@ -1,20 +1,25 @@
 <?php
-// DFHKNQ akan memberikan output EDKGSK
 function enkripsi($str)
 {
   $str = str_split($str);
-  $str[0] = chr(ord($str[0]) + 1);
-  $str[1] = chr(ord($str[1]) - 2);
-  $str[2] = chr(ord($str[2]) + 3);
-  $str[3] = chr(ord($str[3]) - 4);
-  $str[4] = chr(ord($str[4]) + 5);
-  $str[5] = chr(ord($str[5]) - 6);
+  $plus = 1;
+  $min = 0;
+  // DFHKNQ akan memberikan output EDKGSK
+  for ($i = 0; $i < count($str); $i++) {
+    if ($i % 2 == 0) {
+      $str[$i] = chr(ord($str[$i]) + $plus);
+      $plus += 2;
+    } else {
+      $min -= 2;
+      $str[$i] = chr(ord($str[$i]) + $min);
+    }
+  }
   for ($i = 0; $i < count($str); $i++) {
     if ($str[$i] > 'Z') {
       $str[$i] = 'A';
     }
   }
-  print_r($str);
+  print_r(implode($str));
 }
 $input = 'DFHKNQ';
 

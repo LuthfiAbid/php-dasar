@@ -2,7 +2,7 @@
 function unigram($str)
 {
   $exp = explode(" ", $str);
-  print_r(implode(", ", $exp));
+  echo (implode(", ", $exp));
 }
 
 $text = "Jakarta adalah ibukota negara Republik Indonesia";

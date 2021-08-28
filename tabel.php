@@ -9,8 +9,12 @@ for ($i = 1; $i <= 64; $i++) {
     $counter = 0;
     echo "<td>" . $i . "</td>";
   } else {
+    if ($i % 4 == 0) {
+      echo "<td>" . $i . "</td>";
+    } else {
+      echo "<td style='background-color:black;color:white;'>" . $i . "</td>";
+    }
     $counter++;
-    echo "<td style='background-color:black;color:white;'>" . $i . "</td>";
   }
   if ($i % 8 == 0) {
     echo "</tr>";

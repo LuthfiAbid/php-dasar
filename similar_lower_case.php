@@ -4,7 +4,7 @@ function similar($str)
   $lowerCase = strtolower($str);
   $lowerSame = similar_text($str, $lowerCase);
 
-  echo $lowerSame;
+  echo $str . ' mengandung ' . $lowerSame . ' buah huruf kecil';
 }
 $str = "TranSISI";
 similar($str);

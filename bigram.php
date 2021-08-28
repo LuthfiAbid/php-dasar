@@ -1,15 +1,16 @@
 <?php
-function bigram($str)
+function trigram($str)
 {
   $exp = explode(" ", $str);
   $chunk = array_chunk($exp, 2);
   $myString = "";
-  foreach ($chunk as $value) {
-    $myString .= "{$value[0]} {$value[1]}, ";
+  for ($i = 0; $i < count($chunk); $i++) {
+    $myString .= implode(" ", $chunk[$i]);
+    $myString .= ", ";
   }
-  $trimmed = rtrim($myString, ", ");
+  $trimmed = trim($myString, ", ");
   echo $trimmed;
 }
 
-$text = "Jakarta adalah ibukota negara Republik Indonesia";
-bigram($text);
+$text = "Jakarta adalah ibukota negara Republik Indonesia asdasd asdasd asdasd";
+trigram($text);

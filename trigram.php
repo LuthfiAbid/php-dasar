@@ -4,12 +4,13 @@ function trigram($str)
   $exp = explode(" ", $str);
   $chunk = array_chunk($exp, 3);
   $myString = "";
-  foreach ($chunk as $value) {
-    $myString .= "{$value[0]} {$value[1]} {$value[2]}, ";
+  for ($i = 0; $i < count($chunk); $i++) {
+    $myString .= implode(" ", $chunk[$i]);
+    $myString .= ", ";
   }
-  $trimmed = rtrim($myString, ", ");
+  $trimmed = trim($myString, ", ");
   echo $trimmed;
 }
 
-$text = "Jakarta adalah ibukota negara Republik Indonesia";
+$text = "Jakarta adalah ibukota negara Republik Indonesia asdasd asdasd asdasd asdasd";
 trigram($text);
